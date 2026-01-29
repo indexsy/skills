@@ -1,6 +1,6 @@
 # Skills
 
-Marketing & SEO skills for AI agents. Install with a single command.
+Marketing & SEO skills for AI agents.
 
 ## Available Skills
 
@@ -10,8 +10,19 @@ Marketing & SEO skills for AI agents. Install with a single command.
 
 ## Installation
 
+**Quick install (single skill):**
 ```bash
-npx skills add indexsy/skills
+npx degit indexsy/skills/localseo ./skills/localseo
+```
+
+**Clone all skills:**
+```bash
+git clone https://github.com/indexsy/skills.git
+```
+
+**Or just reference directly** - point your AI agent to:
+```
+https://raw.githubusercontent.com/indexsy/skills/main/localseo/SKILL.md
 ```
 
 ## Structure
