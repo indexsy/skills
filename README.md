@@ -1,42 +1,34 @@
-# Marketing Skills
+# Skills
 
-A collection of marketing skills for AI agents. Install them with a single command.
+Marketing & SEO skills for AI agents. Install with a single command.
 
 ## Available Skills
 
 | Skill | Description |
 |-------|-------------|
-| [localseo](./skills/localseo/) | Local SEO audits - GBP, citations, NAP, rankings |
+| [localseo](./localseo/) | Local SEO audits - GBP, citations, NAP, rankings |
 
 ## Installation
 
 ```bash
-npx skills add indexsy/marketing-skills
-```
-
-Or install individual skills:
-
-```bash
-npx skills add indexsy/marketing-skills/skills/localseo
+npx skills add indexsy/skills
 ```
 
 ## Structure
 
 ```
-skills/
-├── localseo/
-│   ├── SKILL.md           # Instructions for the AI agent
-│   ├── KNOWLEDGE-BASE.md  # Reference knowledge
-│   └── README.md          # Human-readable docs
-└── [more skills...]
+/localseo        # Local SEO audit skill
+/[more-skills]   # Coming soon
 ```
+
+Each skill folder contains:
+- `SKILL.md` - Instructions for the AI agent
+- `README.md` - Human-readable docs
+- Supporting knowledge files
 
 ## Contributing
 
-Add new marketing skills by creating a folder in `skills/` with:
-- `SKILL.md` - The main skill file (required)
-- `README.md` - Documentation (recommended)
-- Any supporting knowledge files
+Add new skills by creating a folder with at least a `SKILL.md` file.
 
 ---
 
