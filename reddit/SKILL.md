@@ -1,6 +1,10 @@
-# Reddit Placements Skill
+---
+name: reddit
+description: Reddit organic marketing skill for placing helpful brand mentions in high-intent threads. Use when running Reddit placement campaigns, finding buyer-intent threads, crafting authentic comments, or scaling Reddit presence with anti-detection rules.
+---
 
-## Purpose
+# Reddit Skill
+
 Systematic approach to placing helpful brand mentions in high-intent Reddit threads that rank in Google. Focus on being genuinely useful while staying undetected.
 
 ## Quick Start
@@ -165,7 +169,7 @@ Before posting in any sub, document:
 ## Output Structure
 
 ```
-~/clawd/projects/reddit-placements/
+~/clawd/projects/reddit/
 ├── opportunity_list.md      # Threads to target
 ├── placement_log.md         # What we posted, status, performance
 ├── subreddit_tone_maps.md   # Notes per community
@@ -202,4 +206,4 @@ Before posting in any sub, document:
 
 ## Full Knowledge Base
 
-See: `KNOWLEDGE-BASE.md` for complete methodology and examples.
+See: `./KNOWLEDGE-BASE.md` for complete methodology and examples.
