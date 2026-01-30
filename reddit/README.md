@@ -1,8 +1,39 @@
-# Reddit Skill
+# 📣 Reddit Marketing Skill
 
-Systematic approach to placing helpful brand mentions in high-intent Reddit threads that rank in Google.
+**Systematic Reddit placement methodology for AI agents.**
 
-## What This Skill Does
+Teach your AI agent to find high-intent Reddit threads, craft authentic comments, and scale brand mentions while staying undetected.
+
+---
+
+## 🚀 Quick Install
+
+### For Clawdbot
+```bash
+# Clone into your skills folder
+git clone https://github.com/indexsy/skills ~/.clawdbot/skills/reddit
+```
+
+### For Claude/Cursor/Other Agents
+```bash
+# Clone and reference SKILL.md in your agent's context
+npx degit indexsy/skills/reddit ./skills/reddit
+```
+
+---
+
+## 📋 What's Included
+
+| File | Description |
+|------|-------------|
+| `SKILL.md` | Quick start guide + workflow |
+| `KNOWLEDGE-BASE.md` | Full methodology, anti-detection rules, examples |
+
+---
+
+## 🎯 What This Skill Does
+
+Give your agent the ability to:
 
 - 🔍 Find high-intent threads (buyer queries, comparisons, reviews)
 - ✍️ Craft genuine, helpful comments with soft brand mentions
@@ -10,52 +41,95 @@ Systematic approach to placing helpful brand mentions in high-intent Reddit thre
 - 📊 Track placements and maintain winners
 - 📈 Scale safely with account rotation
 
-## Key Rules
+---
 
-### Cadence
+## 📝 Usage
+
+After installing, tell your agent:
+
+> "Run a Reddit placement campaign for [product/brand] targeting [keywords]"
+
+The agent will ask for:
+1. Product/brand being mentioned
+2. Target keywords (buyer intent queries)
+3. Vertical/niche category
+4. Constraints (forbidden claims, link rules)
+
+Then produce opportunity lists, comments, and tracking.
+
+---
+
+## 📊 Output Structure
+
+```
+{project}-reddit/
+├── opportunity_list.md      # Threads to target
+├── placement_log.md         # Posted comments + status
+├── subreddit_tone_maps.md   # Community notes
+├── comment_templates.md     # Reusable patterns
+└── account_health.md        # Karma, activity tracking
+```
+
+---
+
+## 🔧 Methodology
+
+### Anti-Detection Rules
+
+| Red Flag | Why It Burns Accounts |
+|----------|----------------------|
+| Aged account + low karma | 1yr old with 2 karma = obvious bot |
+| AI-sounding content | Robotic phrasing, perfect grammar |
+| Only GEO subs | Low-mod subs are watched |
+| Pattern posting | Same times, same subs, same style |
+
+### Account Health Requirements
+
+| Metric | Minimum | Ideal |
+|--------|---------|-------|
+| Karma | 100+ | 500+ |
+| Account age | 30 days | 6+ months |
+| Genuine comments | 20+ | 50+ |
+| Subreddit diversity | 5+ subs | 10+ subs |
+
+### Cadence Rules
+
 - **1 comment per account per week MAXIMUM**
 - 10 accounts = 10 placements/week max
-- 80% genuine engagement, 20% strategic
+- **80/20 rule**: 80% genuine engagement, 20% strategic
+- Never batch posts in same subreddit from multiple accounts
 
-### Account Health (Before Posting)
-- 100+ karma minimum
-- 20+ genuine comments
-- 5+ subreddit diversity
-- No pattern posting
+---
 
-### Anti-Detection
-- Vary tone, timing, structure
-- Post in well-moderated subs (not just GEO subs)
-- Sound human (casual language, specific details)
-- Never multiple accounts in same thread
+## 💬 Comment Template (5-Part)
 
-## Files
+1. **Empathy hook** — Mirror OP's situation
+2. **Context** — What you tried/decided between
+3. **Helpful breakdown** — Pros/cons, tradeoffs
+4. **Soft recommendation** — Mention brand naturally
+5. **Exit line** — Offer to answer questions
 
-| File | Description |
-|------|-------------|
-| `SKILL.md` | Quick start guide + workflow |
-| `KNOWLEDGE-BASE.md` | Full methodology + examples |
+---
 
-## Usage
+## 📄 License
 
-```
-"Run a Reddit placement campaign for [product/brand] targeting [keywords]"
-```
+MIT — Use freely, attribution appreciated.
 
-The agent will:
-1. Discover opportunity threads
-2. Map subreddit fit
-3. Craft comments using 5-part template
-4. Execute with proper cadence
-5. Monitor and maintain
+---
 
-## Output Structure
+## 👤 Author
 
-```
-~/clawd/projects/reddit/
-├── opportunity_list.md
-├── placement_log.md
-├── subreddit_tone_maps.md
-├── comment_templates.md
-└── account_health.md
-```
+**[Indexsy](https://indexsy.com)** — We build, acquire, and scale digital assets.
+
+- Twitter: [@indexsy](https://twitter.com/indexsy)
+- YouTube: [youtube.com/@indexsy](https://youtube.com/@indexsy)
+
+---
+
+## 🤝 Contributing
+
+PRs welcome! If you improve the methodology, submit a pull request.
+
+---
+
+*Built for the open agent skills ecosystem.*
