@@ -7,14 +7,14 @@ Marketing & SEO skills for AI agents.
 | Skill | Description |
 |-------|-------------|
 | [localseo](./localseo/) | Local SEO audits - GBP, citations, NAP, rankings |
-| [reddit-placements](./reddit-placements/) | Reddit organic marketing with anti-detection rules |
+| [reddit](./reddit/) | Reddit organic marketing with anti-detection rules |
 
 ## Installation
 
 **Quick install (single skill):**
 ```bash
 npx degit indexsy/skills/localseo ./skills/localseo
-npx degit indexsy/skills/reddit-placements ./skills/reddit-placements
+npx degit indexsy/skills/reddit ./skills/reddit
 ```
 
 **Clone all skills:**
@@ -25,20 +25,19 @@ git clone https://github.com/indexsy/skills.git
 **Or just reference directly** - point your AI agent to:
 ```
 https://raw.githubusercontent.com/indexsy/skills/main/localseo/SKILL.md
-https://raw.githubusercontent.com/indexsy/skills/main/reddit-placements/SKILL.md
+https://raw.githubusercontent.com/indexsy/skills/main/reddit/SKILL.md
 ```
 
 ## Structure
 
 ```
-/localseo            # Local SEO audit skill
-/reddit-placements   # Reddit organic marketing skill
+/localseo   # Local SEO audit skill
+/reddit     # Reddit organic marketing skill
 ```
 
 Each skill folder contains:
 - `SKILL.md` - Instructions for the AI agent
-- `README.md` - Human-readable docs
-- `KNOWLEDGE-BASE.md` - Full methodology
+- `KNOWLEDGE-BASE.md` - Full methodology (optional)
 
 ## Contributing
 
