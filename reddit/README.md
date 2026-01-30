@@ -10,14 +10,20 @@ Teach your AI agent to find high-intent Reddit threads, craft authentic comments
 
 ### For Clawdbot
 ```bash
-# Clone into your skills folder
-git clone https://github.com/indexsy/skills ~/.clawdbot/skills/reddit
+# Quick install single skill
+npx degit indexsy/skills/reddit ~/.clawdbot/skills/reddit
 ```
 
 ### For Claude/Cursor/Other Agents
 ```bash
 # Clone and reference SKILL.md in your agent's context
 npx degit indexsy/skills/reddit ./skills/reddit
+```
+
+### Or clone all skills
+```bash
+git clone https://github.com/indexsy/skills.git
+# Reference skills/reddit/SKILL.md
 ```
 
 ---

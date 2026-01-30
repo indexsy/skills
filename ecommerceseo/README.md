@@ -10,16 +10,20 @@ Teach your AI agent to run comprehensive eCommerce SEO audits covering technical
 
 ### For Clawdbot
 ```bash
-# Clone into your skills folder
-git clone https://github.com/indexsy/skills.git ~/.clawdbot/skills/indexsy-skills
-# Then reference ~/.clawdbot/skills/indexsy-skills/ecommerceseo
+# Quick install single skill
+npx degit indexsy/skills/ecommerceseo ~/.clawdbot/skills/ecommerceseo
 ```
 
 ### For Claude/Cursor/Other Agents
 ```bash
 # Clone and reference SKILL.md in your agent's context
+npx degit indexsy/skills/ecommerceseo ./skills/ecommerceseo
+```
+
+### Or clone all skills
+```bash
 git clone https://github.com/indexsy/skills.git
-# Reference skills/ecommerceseo
+# Reference skills/ecommerceseo/SKILL.md
 ```
 
 ---

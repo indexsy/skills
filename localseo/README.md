@@ -10,14 +10,20 @@ Teach your AI agent to run comprehensive local SEO audits covering Google Busine
 
 ### For Clawdbot
 ```bash
-# Clone into your skills folder
-git clone https://github.com/indexsy/local-seo-skill ~/.clawdbot/skills/local-seo-audit
+# Quick install single skill
+npx degit indexsy/skills/localseo ~/.clawdbot/skills/localseo
 ```
 
 ### For Claude/Cursor/Other Agents
 ```bash
 # Clone and reference SKILL.md in your agent's context
-git clone https://github.com/indexsy/local-seo-skill
+npx degit indexsy/skills/localseo ./skills/localseo
+```
+
+### Or clone all skills
+```bash
+git clone https://github.com/indexsy/skills.git
+# Reference skills/localseo/SKILL.md
 ```
 
 ---
