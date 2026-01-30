@@ -68,7 +68,7 @@ The agent will:
 
 ## 🔧 Setup: IndexChex API
 
-This skill uses **[IndexChex](https://indexchex.com)** — the same service powering SpeedyIndex.
+This skill uses **[IndexChex](https://indexchex.com)** for index checking and URL submission.
 
 ### Get Your API Key
 
