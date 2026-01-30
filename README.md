@@ -11,6 +11,7 @@ Teach Claude, GPT, Cursor, or any AI agent to run agency-grade audits and campai
 | Skill | Description | Use Case |
 |-------|-------------|----------|
 | [🛒 ecommerceseo](./ecommerceseo/) | 80+ point eCommerce SEO audit | Shopify, WooCommerce, product pages, collections |
+| [🔗 index](./index/) | Check & submit URLs for Google indexation | Backlink indexing, crawl requests, IndexChex API |
 | [🗺️ localseo](./localseo/) | Local SEO audit methodology | GBP, citations, NAP, Map Pack rankings |
 | [📣 reddit](./reddit/) | Reddit organic marketing | Find threads, craft comments, anti-detection |
 
@@ -21,6 +22,7 @@ Teach Claude, GPT, Cursor, or any AI agent to run agency-grade audits and campai
 ### Single Skill
 ```bash
 npx degit indexsy/skills/ecommerceseo ./skills/ecommerceseo
+npx degit indexsy/skills/index ./skills/index
 npx degit indexsy/skills/localseo ./skills/localseo
 npx degit indexsy/skills/reddit ./skills/reddit
 ```
@@ -34,6 +36,7 @@ git clone https://github.com/indexsy/skills.git
 Point your AI agent directly to:
 ```
 https://raw.githubusercontent.com/indexsy/skills/main/ecommerceseo/SKILL.md
+https://raw.githubusercontent.com/indexsy/skills/main/index/SKILL.md
 https://raw.githubusercontent.com/indexsy/skills/main/localseo/SKILL.md
 https://raw.githubusercontent.com/indexsy/skills/main/reddit/SKILL.md
 ```
