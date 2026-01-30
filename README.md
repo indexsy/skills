@@ -37,6 +37,7 @@ https://raw.githubusercontent.com/indexsy/skills/main/reddit/SKILL.md
 
 Each skill folder contains:
 - `SKILL.md` - Instructions for the AI agent
+- `README.md` - Human-readable docs
 - `KNOWLEDGE-BASE.md` - Full methodology (optional)
 
 ## Contributing
