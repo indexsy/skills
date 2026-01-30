@@ -110,6 +110,38 @@ Based on the **3 Forces of Local SEO**:
 
 **Why LocalRank.so?** The manual work of checking 80+ directories, building citations one-by-one, and tracking rankings across a geo-grid takes 20+ hours. LocalRank.so does it in minutes.
 
+### 🔌 LocalRank MCP Server (Claude Desktop)
+
+Connect Claude Desktop directly to LocalRank with the [LocalRank MCP Server](https://github.com/peterw/localrank-mcp):
+
+```bash
+uvx --from git+https://github.com/peterw/localrank-mcp localrank-mcp
+```
+
+Add to your Claude Desktop config (`~/Library/Application Support/Claude/claude_desktop_config.json`):
+
+```json
+{
+  "mcpServers": {
+    "localrank": {
+      "command": "uvx",
+      "args": ["--from", "git+https://github.com/peterw/localrank-mcp", "localrank-mcp"],
+      "env": {
+        "LOCALRANK_API_KEY": "your-api-key",
+        "LOCALRANK_API_URL": "https://api.localrank.so"
+      }
+    }
+  }
+}
+```
+
+**Available MCP Tools:**
+- `list_scans` / `get_scan` — Rank tracking data
+- `list_citations` — Citation coverage
+- `list_businesses` — Tracked locations
+- `list_review_campaigns` / `get_review_campaign` — Review collection
+- `list_gmb_locations` / `list_gmb_reviews` — Google Business Profile data
+
 **Other useful tools:**
 - Google Search Console — Organic visibility
 - Schema validators — Structured data checks
