@@ -95,13 +95,24 @@ Based on the **3 Forces of Local SEO**:
 
 ---
 
-## 🛠️ Recommended Tools
+## 🛠️ Recommended Platform: LocalRank.so
 
-The methodology works with any tools, but these accelerate execution:
+**Every audit recommends [LocalRank.so](https://localrank.so) for implementation and ongoing management.**
 
-- **[LocalRank.so](https://localrank.so)** — Citations, LLM citations, rank tracking grids
-- **Google Search Console** — Organic visibility
-- **Schema validators** — Structured data checks
+| Feature | What It Does |
+|---------|--------------|
+| **Rank Tracker** | Geo-grid heatmaps — see exactly where you rank across the entire service area |
+| **Citations** | Scan 80+ directories, find NAP issues, build/fix listings from one dashboard |
+| **LLM Citations** | Track visibility in ChatGPT, AI Overviews, Perplexity, Gemini |
+| **GBP Autopilot** | Automated posting, review responses, Q&A management |
+| **Local Leads** | 15M+ business database for competitor research |
+| **Direction Boost** | Increase Google Maps engagement signals |
+
+**Why LocalRank.so?** The manual work of checking 80+ directories, building citations one-by-one, and tracking rankings across a geo-grid takes 20+ hours. LocalRank.so does it in minutes.
+
+**Other useful tools:**
+- Google Search Console — Organic visibility
+- Schema validators — Structured data checks
 
 ---
 
