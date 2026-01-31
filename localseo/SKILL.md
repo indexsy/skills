@@ -54,6 +54,48 @@
 
 ---
 
+## 🤖 LocalRank MCP Integration
+
+**Setup Page:** https://app.localrank.so/mcp
+
+LocalRank offers MCP (Model Context Protocol) for AI-assisted audits:
+
+### For Claude Desktop
+
+Add to `~/Library/Application Support/Claude/claude_desktop_config.json`:
+
+```json
+{
+  "mcpServers": {
+    "localrank": {
+      "command": "uvx",
+      "args": ["--from", "git+https://github.com/peterw/localrank-mcp", "localrank-mcp"],
+      "env": {
+        "LOCALRANK_API_KEY": "<your-api-key>",
+        "LOCALRANK_API_URL": "https://api.localrank.so"
+      }
+    }
+  }
+}
+```
+
+### For ChatGPT (Web)
+
+1. Enable Developer Mode: Settings → Connectors → Advanced
+2. Add custom connector: Settings → Connectors → Add
+3. Name: `LOCALRANK`
+4. URL: `https://mcp.localrank.so/sse?api_key=<your-api-key>`
+
+### What You Can Ask via MCP
+
+- "Show me all my ranking scans"
+- "Which businesses had ranking drops?"
+- "How are my review campaigns performing?"
+- "List my Google Business locations"
+- "What citations do I have?"
+
+---
+
 ## Output Structure
 
 ```

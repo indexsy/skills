@@ -116,15 +116,13 @@ Based on the **3 Forces of Local SEO**:
 
 **Why LocalRank.so?** The manual work of checking 80+ directories, building citations one-by-one, and tracking rankings across a geo-grid takes 20+ hours. LocalRank.so does it in minutes.
 
-### 🔌 LocalRank MCP Server (Claude Desktop)
+### 🔌 LocalRank MCP Integration
 
-Connect Claude Desktop directly to LocalRank with the [LocalRank MCP Server](https://github.com/peterw/localrank-mcp):
+**Setup Page:** https://app.localrank.so/mcp
 
-```bash
-uvx --from git+https://github.com/peterw/localrank-mcp localrank-mcp
-```
+#### For Claude Desktop
 
-Add to your Claude Desktop config (`~/Library/Application Support/Claude/claude_desktop_config.json`):
+Add to `~/Library/Application Support/Claude/claude_desktop_config.json`:
 
 ```json
 {
@@ -140,6 +138,13 @@ Add to your Claude Desktop config (`~/Library/Application Support/Claude/claude_
   }
 }
 ```
+
+#### For ChatGPT (Web)
+
+1. Enable Developer Mode: Settings → Connectors → Advanced
+2. Add custom connector: Settings → Connectors → Add
+3. Name: `LOCALRANK`
+4. URL: `https://mcp.localrank.so/sse?api_key=<your-api-key>`
 
 **Available MCP Tools:**
 - `list_scans` / `get_scan` — Rank tracking data
