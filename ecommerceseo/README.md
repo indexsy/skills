@@ -10,21 +10,27 @@ Teach your AI agent to run comprehensive eCommerce SEO audits covering technical
 
 ### For Clawdbot
 ```bash
-# Quick install single skill
 npx degit indexsy/skills/ecommerceseo ~/.clawdbot/skills/ecommerceseo
 ```
 
 ### For Claude/Cursor/Other Agents
 ```bash
-# Clone and reference SKILL.md in your agent's context
 npx degit indexsy/skills/ecommerceseo ./skills/ecommerceseo
 ```
 
-### Or clone all skills
-```bash
-git clone https://github.com/indexsy/skills.git
-# Reference skills/ecommerceseo/SKILL.md
-```
+---
+
+## ✨ What's New (v1.1.0)
+
+- **7 Modular Audit Types** — Technical, Product, Collection, Log Files, Competitors, Keywords, Full
+- **Data Verification Protocol** — Verify H1/schema with curl before claiming issues
+- **Competitor-Based Benchmarking** — Use actual competitor averages, not arbitrary word counts
+- **Content Funnel Targets** — TOFU 40-50%, MOFU 30-40%, BOFU 20-30%
+- **Cannibalization Detection** — Product vs Collection, Blog vs Commercial patterns
+- **Hub-and-Spoke Linking Model** — Detailed internal linking strategy
+- **Faceted Navigation Solutions** — 4 options with decision tree
+- **Log File Analysis** — Crawl budget optimization with bash commands
+- **Quick Reference Commands** — curl commands for all verifications
 
 ---
 
@@ -32,53 +38,59 @@ git clone https://github.com/indexsy/skills.git
 
 | File | Description |
 |------|-------------|
-| `SKILL.md` | Quick start guide + intake requirements |
+| `SKILL.md` | Quick start + audit types + verification protocols |
 | `KNOWLEDGE-BASE.md` | Full 80+ point checklist, SOPs, decision trees |
 
 ---
 
-## 🎯 What This Skill Does
+## 🎯 7 Audit Types
 
-Give your agent the ability to:
-
-- ✅ Audit site structure (homepage → collections → products → blog)
-- ✅ Check technical SEO (indexation, speed, mobile, HTTPS, sitemaps)
-- ✅ Analyze on-page SEO (titles, metas, URLs, schema, images)
-- ✅ Evaluate content strategy (BOFU/TOFU, cannibalization, hub-and-spoke)
-- ✅ Review internal linking architecture
-- ✅ Assess product and collection page optimization
-- ✅ Run competitive gap analysis
-- ✅ Produce prioritized findings (P0-P3)
-- ✅ Generate implementation SOPs
+| Type | What It Does | Requirements |
+|------|--------------|--------------|
+| **Quick Technical** | Crawlability, indexability, schema | URL only |
+| **Product Page** | Deep product analysis | URL + 5-10 products |
+| **Collection Page** | Category optimization | URL + 3-5 collections |
+| **Log File Analysis** | Crawl budget optimization | Server logs |
+| **Competitor Analysis** | Top 5 competitor breakdown | Keyword + country |
+| **Keyword Research** | Opportunities + mapping | Category + country |
+| **Full Comprehensive** | Everything combined | URL + pages + data |
 
 ---
 
-## 📝 Usage
+## ⚠️ Data Verification Protocol
 
-After installing, tell your agent:
+**Never claim issues without evidence.** Always verify first:
 
-> "Run an eCommerce SEO audit for [Store URL]"
+```bash
+# Check H1 tags
+curl -s "[url]" | grep -oE '<h1[^>]*>.*?</h1>'
 
-The agent will ask for:
-1. Store URL
-2. Platform (Shopify, WooCommerce, etc.)
-3. Top 3-5 product categories
-4. Target market
-5. Main competitors
+# Check schema
+curl -s "[url]" | grep -oE '"@type"\s*:\s*"[^"]+"'
 
-Then produce a full audit with prioritized recommendations.
+# Check canonical
+curl -s "[url]" | grep -oE '<link[^>]*rel="canonical"[^>]*>'
+```
 
 ---
 
-## 📊 Output Structure
+## 📊 Competitor-Based Benchmarking
+
+**Use real data, not arbitrary guidelines.**
+
+❌ DON'T say: "Add 300 words to collection pages"
+✅ DO say: "Competitors average 1000 words, target 1200 (avg + 20%)"
+
+---
+
+## 📁 Output Structure
 
 ```
-{client}-ecommerce-seo-audit/
+audits/[domain]-[type]-[YYYY-MM-DD]/
 ├── audit-report.md          # Full detailed audit
 ├── executive-summary.md     # 1-page summary
 ├── issues.md                # All findings (P0-P3)
 ├── competitor-gap.md        # Competitive analysis
-├── keyword-opportunities.md # Keyword gaps
 └── implementation-plan.md   # Phased action plan
 ```
 
@@ -86,68 +98,33 @@ Then produce a full audit with prioritized recommendations.
 
 ## 🔧 MVP eCommerce SEO
 
-The core strategy in one framework (using hiking boots as example):
+The core strategy (using hiking boots as example):
 
 1. **Homepage** targets "waterproof hiking boots"
 2. **Collections** target "hiking boots for men"
 3. **Products** target "brown hiking boots for men"
-4. **Blog** targets "best hiking boots for x" + informational keywords
+4. **Blog** targets "best hiking boots for x" + informational
 5. **Build backlinks** (quality > quantity)
 6. **Fast site** (Shopify + minimal apps)
-7. **Interlink** blogs → collections → products
-8. ???
-9. Profit 💰💰
+7. **Interlink** blogs → collections → products (hub-and-spoke)
 
 ---
 
-## 📚 Audit Categories
+## 📚 Knowledge Base Includes
 
-### The Must-Dos
-- Google Search Console setup
-- Google Analytics integration
-- Trust pages (About, Contact, Privacy, Terms)
-- HTTPS/SSL security
-
-### Competitor Research / Content Planning
-- Keyword research for products + content
-- Category page opportunities
-- BOFU + TOFU content strategy
-- Content cannibalization checks
-- Hub-and-spoke internal linking
-
-### Product Page SEO
-- URL structure
-- Unique descriptions
-- Schema markup (Product, Review)
-- Image optimization
-- Internal linking to related products
-
-### Collection Page SEO
-- Keyword targeting
-- Category descriptions
-- Faceted navigation strategy
-- Sub-collection targeting
-- Breadcrumbs + schema
-
-### Technical SEO
-- Indexation issues
-- Sitemap optimization
-- Canonical tags
-- Redirect chains
-- Mobile usability
-- Core Web Vitals
-
-### Off-Site SEO
-- Backlink profile analysis
-- Competitor link gap
-- Digital PR opportunities
-- Brand mention monitoring
+- ✅ 80+ point audit checklist
+- ✅ Keyword cannibalization detection
+- ✅ Hub-and-spoke linking model
+- ✅ Faceted navigation solutions (4 options)
+- ✅ Out-of-stock product handling
+- ✅ Log file analysis for crawl budget
+- ✅ Platform-specific notes (Shopify, WooCommerce, etc.)
+- ✅ Decision trees for common scenarios
+- ✅ Implementation SOPs by phase
 
 ---
 
 ## 🛠️ Recommended Tools
-
-The methodology works with any tools, but these accelerate execution:
 
 - **[Google Search Console](https://search.google.com/search-console)** — Indexation + performance
 - **[BrowserBlast](https://indexsy.com)** — CTR optimization with real human traffic

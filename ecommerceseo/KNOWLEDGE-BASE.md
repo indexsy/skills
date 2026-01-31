@@ -594,3 +594,252 @@ When execution requires scale or expertise:
 ---
 
 *Built by [Indexsy](https://indexsy.com) — We build, acquire & scale digital businesses.*
+
+---
+
+## 14) Keyword Cannibalization Detection
+
+**Method 1: Site Search**
+```
+site:[domain] "[target keyword]"
+```
+Multiple pages ranking for same keyword with same intent = Cannibalization
+
+**Common Patterns:**
+
+### Product vs Collection
+```
+Problem:
+  /products/running-shoes → "running shoes"
+  /collections/running-shoes → "running shoes"
+
+Solution:
+  Collection = broad term ("running shoes")
+  Product = specific ("nike air max running shoes")
+```
+
+### Blog vs Commercial
+```
+Problem:
+  /blog/best-running-shoes → "best running shoes"
+  /collections/running-shoes → "best running shoes"
+
+Solution:
+  Blog = informational ("how to choose running shoes")
+  Collection = transactional ("buy running shoes")
+```
+
+### Multiple Collections
+```
+Problem:
+  /collections/mens-shoes
+  /collections/mens-footwear
+  /collections/shoes-for-men
+  All targeting "mens shoes"
+
+Solution:
+  Consolidate to one primary collection
+  301 redirect others OR differentiate clearly
+```
+
+**Detection Checklist:**
+- [ ] Export all page titles and URLs
+- [ ] Look for multiple pages with same target keyword in title
+- [ ] Check overlapping H1 tags
+- [ ] Search `site:[domain] "[keyword]"` for each target
+
+---
+
+## 15) Hub-and-Spoke Internal Linking Model
+
+**Structure:**
+```
+       [COLLECTION PAGE]  ← Hub
+        /     |      \
+       /      |       \
+   [Product] [Product] [Product]  ← Spokes
+       \      |       /
+        \     |      /
+         [BLOG POST]  ← Spoke (links back to hub)
+```
+
+**Implementation:**
+
+### Collection as Hub
+- Links to top 10-20 products
+- Links to related sub-collections
+- Links to buying guide content
+- Receives links from all spokes
+
+### Products as Spokes
+- Link back to parent collection
+- Link to 4-6 related products
+- Link to relevant guides/blog posts
+
+### Blog Posts as Spokes
+- Every post links to relevant products (2-3 minimum)
+- Every post links to relevant collection
+- Create "Related Articles" section on collection pages
+
+**Cross-Linking Rules:**
+```
+Collection ↔ Collection: 3-5 related category links
+Product ↔ Product: 4-6 related products ("You might also like")
+Blog → Product/Collection: Every post links to 2-3+ products
+Collection → Blog: Add "Related Guides" section
+```
+
+---
+
+## 16) Faceted Navigation Handling
+
+**Problem:** Filters create duplicate URLs
+```
+/shoes
+/shoes?color=red
+/shoes?color=red&size=10
+/shoes?sort=price
+```
+
+**4 Solutions:**
+
+### Option 1: Canonical Tags
+All filtered URLs → canonical to main collection
+```html
+<link rel="canonical" href="/shoes" />
+```
+Best for: Most eCommerce sites
+
+### Option 2: Block in robots.txt
+```
+Disallow: /*?color=
+Disallow: /*?size=
+Disallow: /*?sort=
+Disallow: /*&
+```
+Best for: Large sites with crawl budget issues
+
+### Option 3: AJAX Filters (No URL Change)
+Filters don't create new URLs — JS updates content
+Best for: New sites, sites with dev resources
+
+### Option 4: URL Parameter Handling in GSC
+Configure which parameters to ignore
+Best for: Supplementary to other methods
+
+**Decision Tree:**
+```
+IF crawl budget is concern → robots.txt block
+IF already have many indexed filter URLs → canonical
+IF building new site → AJAX filters
+ALWAYS → configure GSC parameters as backup
+```
+
+---
+
+## 17) Log File Analysis (Crawl Budget)
+
+**Goal:** Optimize how Googlebot spends crawl budget
+
+### Extract Googlebot Data
+```bash
+# Filter Googlebot requests
+grep "Googlebot" access.log > googlebot.log
+
+# Count total requests
+grep -c "Googlebot" access.log
+
+# Most crawled URLs
+grep "Googlebot" access.log | awk '{print $7}' | sort | uniq -c | sort -rn | head -50
+
+# Find filter parameter waste
+grep "Googlebot" access.log | grep "?" | awk '{print $7}' | sort | uniq -c | sort -rn | head -20
+```
+
+### Crawl Budget Distribution
+```
+| Page Type     | % of Crawl | Priority | Status   |
+|---------------|------------|----------|----------|
+| Products      | 40-50%     | High     | GOOD     |
+| Collections   | 20-30%     | High     | GOOD     |
+| Homepage      | 5-10%      | Medium   | GOOD     |
+| Blog          | 10-15%     | Medium   | GOOD     |
+| Filters       | <5%        | Low      | OK       |
+| Filters       | >10%       | Low      | WASTE    |
+| Search/Cart   | Any        | None     | WASTE    |
+```
+
+### Common Crawl Waste (Fix Immediately)
+1. **Faceted navigation** → Block in robots.txt
+2. **Internal search results** → `Disallow: /search`
+3. **Cart/checkout pages** → `Disallow: /cart`
+4. **Session ID parameters** → Use cookies instead
+5. **Sort parameters** → Canonical to default
+
+---
+
+## 18) Quick Reference Commands
+
+```bash
+# Fetch robots.txt
+curl -s [domain]/robots.txt
+
+# Fetch sitemap
+curl -s [domain]/sitemap.xml | head -100
+
+# Check H1 tags (ALWAYS VERIFY BEFORE CLAIMING ISSUES)
+curl -s "[url]" | grep -oE '<h1[^>]*>.*?</h1>'
+
+# Check title tag
+curl -s "[url]" | grep -oE '<title>.*?</title>'
+
+# Check canonical
+curl -s "[url]" | grep -oE '<link[^>]*rel="canonical"[^>]*>'
+
+# Check schema types
+curl -s "[url]" | grep -oE '"@type"\s*:\s*"[^"]+"'
+
+# Check meta robots
+curl -s "[url]" | grep -oE '<meta[^>]*name="robots"[^>]*>'
+
+# Approximate word count
+curl -s "[url]" | sed 's/<[^>]*>//g' | wc -w
+
+# Count internal links
+curl -s "[url]" | grep -oE 'href="[^"]*"' | grep -v "http" | wc -l
+
+# Check response headers
+curl -sI "[url]" | head -20
+```
+
+---
+
+## 19) Scoring Methodology
+
+**Overall Score = Average of 4 pillars**
+
+### Technical SEO (25%)
+- Crawlability: /25
+- Indexability: /25
+- Schema: /25
+- Speed/Mobile: /25
+
+### On-Page SEO (25%)
+- Title/Meta: /25
+- H1/Headers: /25
+- Content quality: /25
+- Images/Alt: /25
+
+### Content Quality (25%)
+- Word count vs competitors: /25
+- Uniqueness: /25
+- Funnel coverage (TOFU/MOFU/BOFU): /25
+- Internal linking: /25
+
+### Competitive Position (25%)
+- Content gap: /25
+- Authority gap: /25
+- Review gap: /25
+- Feature gap: /25
+
+---
