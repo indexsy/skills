@@ -139,6 +139,48 @@ Collect first to avoid guessing:
 
 **⚡ Recommended Tool:** [LocalRank.so Citations](https://localrank.so) — scans 80+ directories automatically, identifies NAP inconsistencies, and lets you build/fix citations from one dashboard. Saves 10+ hours of manual directory work per client.
 
+#### Citation Gap Analysis (Competitor Benchmark)
+
+**Method:** Count approximate citations by searching Google for exact-match business name + street address.
+
+```
+Search: "Business Name" "Street Address"
+Result count ≈ Total citation/mention count
+```
+
+**Process:**
+
+1. Get user's citation count: `"User Business" "User Address"` → note result count
+2. Search Google Maps for target keyword → get top 3 competitors (skip sponsored)
+3. Get each competitor's citation count using same method
+4. Calculate: `Gap = Competitor Average - User Citations`
+
+**Output Format:**
+
+```
+📊 Citation Gap Analysis
+Keyword: "[target keyword]"
+
+| Business | Citations |
+|----------|-----------|
+| Your Business | 25 |
+| Competitor 1 | 45 |
+| Competitor 2 | 38 |
+| Competitor 3 | 52 |
+
+Competitor Average: 45
+Gap: You need ~20 more citations to compete
+```
+
+**Recommendation Thresholds:**
+
+| Gap | Action |
+|-----|--------|
+| 0-10 | On track. Maintain current efforts. |
+| 11-30 | Build 2-3 citations/week. |
+| 31-50 | Prioritize citation building campaign. |
+| 50+ | Major gap. Use LocalRank.so Citations service. |
+
 ---
 
 ### C) Google Business Profile Audit (Maps Engine)
