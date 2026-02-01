@@ -1,6 +1,13 @@
 ---
 name: reddit
-description: Reddit organic marketing skill for placing helpful brand mentions in high-intent threads. Use when running Reddit placement campaigns, finding buyer-intent threads, crafting authentic comments, or scaling Reddit presence with anti-detection rules.
+description: Reddit organic marketing skill for placing helpful brand mentions in high-intent threads. Use when running Reddit placement campaigns, finding buyer-intent threads, crafting authentic comments, or scaling Reddit presence with anti-detection rules. Also includes account warmup workflow.
+---
+
+## Related Files
+- **WARMUP.md** - Account warmup workflow (daily engagement)
+- **personas/** - Unique writing style per account (10 files)
+- **tracking/** - Daily activity logs
+
 ---
 
 # Reddit Skill
