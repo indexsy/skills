@@ -13,6 +13,7 @@ Marketing & SEO skills for AI agents.
 | [direct-response-copy](./direct-response-copy/) | Direct response copywriting — headlines, landing pages, emails, ads |
 | [reddit](./reddit/) | Reddit organic marketing with anti-detection rules |
 | [index](./index/) | Backlink indexing with IndexChex API |
+| [keyword-research](./keyword-research/) | Advanced keyword research with tangential relevance & cannibalization detection |
 
 ## Installation
 
@@ -25,6 +26,7 @@ npx degit indexsy/skills/ecommerceseo ./skills/ecommerceseo
 npx degit indexsy/skills/direct-response-copy ./skills/direct-response-copy
 npx degit indexsy/skills/reddit ./skills/reddit
 npx degit indexsy/skills/index ./skills/index
+npx degit indexsy/skills/keyword-research ./skills/keyword-research
 ```
 
 **Clone all skills:**
